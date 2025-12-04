@@ -1,0 +1,73 @@
+-- ================================ PROYECTO BARDUBAI =======================================
+-- ==================== SANTIAGO ANDRES GOMEZ ROJAS Y ANGIE TATIANA CIRO ====================
+-- ===== INDICES =====
+
+-- Cliente
+CREATE INDEX ix_cliente_nombre
+ON Cliente(nombre);
+
+CREATE INDEX ix_cliente_email
+ON Cliente(email);
+
+-- Empleado
+CREATE INDEX ix_empleado_apellido
+ON Empleado(apellido);
+
+CREATE INDEX ix_empleado_turno
+ON Empleado(turno);
+
+-- Reserva
+CREATE INDEX ix_reserva_idcliente
+ON Reserva(idCliente);
+
+CREATE INDEX ix_reserva_fecha
+ON Reserva(fechaReserva);
+
+-- Venta
+CREATE INDEX ix_venta_idcliente
+ON Venta(idCliente);
+
+CREATE INDEX ix_venta_idempleado
+ON Venta(idEmpleado);
+
+CREATE INDEX ix_venta_fecha
+ON Venta(fecha);
+
+CREATE INDEX ix_venta_estado
+ON Venta(estado);
+
+-- Producto
+CREATE INDEX ix_producto_nombre
+ON Producto(nombre);
+
+CREATE INDEX ix_producto_idcategoria
+ON Producto(idCategoria);
+
+-- DetalleVentaProducto
+CREATE INDEX ix_dvp_idventa
+ON DetalleVentaProducto(idVenta);
+
+CREATE INDEX ix_dvp_idproducto
+ON DetalleVentaProducto(idProducto);
+
+-- Compra
+CREATE INDEX ix_compra_idproveedor
+ON Compra(idProveedor);
+
+CREATE INDEX ix_compra_fecha
+ON Compra(fechaCompra);
+
+-- DetalleCompraProducto
+CREATE INDEX ix_dcp_idcompra
+ON DetalleCompraProducto(idCompra);
+
+CREATE INDEX ix_dcp_idproducto
+ON DetalleCompraProducto(idProducto);
+
+-- Inventario
+CREATE INDEX ix_inventario_idproducto
+ON Inventario(idProducto);
+
+-- Entrada
+CREATE INDEX ix_entrada_fechavenc
+ON Entrada(fechaVencimiento);
